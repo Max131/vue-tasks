@@ -7,6 +7,7 @@ How to start?
 In console `npm install` & `npm start`
 
 ToDo:
+- Edit
 - Add local storage for persisten data
 - Make it a PWA
 
