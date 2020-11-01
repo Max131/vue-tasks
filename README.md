@@ -4,7 +4,7 @@
 
 ToDo:
 - Add local storage for persisten data
-- Made it a PWA
+- Make it a PWA
 
 Made it with:
 - [Vue.js](https://vuejs.org)
