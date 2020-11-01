@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vue App</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
+    <link rel="icon" href="icon.png">
+    <style>
+    	.notification{
+    		user-select: none;
+    	}
+    </style>
+  </head>
+  <body>
+  <section class="section">
+    <div class="container" id="app">
+      <div class="content has-text-centered">
+      	  <span class="icon is-large has-text-warning"><i class="fas fa-sticky-note fa-3x"></i></span>
+	      <h1 class="title mt-0">
+	        My tasks app
+	      </h1>
+	      <p class="subtitle">
+	        Made it with <strong>Bulma & Vue</strong>!
+	      </p>
+  		</div>
+      <div class="columns is-centered">
+      	<div class="column is-4 box is-paddingless">
+      		<div class="section pb-0">
+      			<div class="field has-addons">
+      				<div class="control is-expanded has-icons-left">
+      					<input type="text" class="input" placeholder="Write a task and hit enter &hellip;" v-model="task" @keyup.enter="addTask">
+      					<span class="icon is-left">
+      						<i class="fas fa-sticky-note"></i>
+      					</span>
+      				</div>
+      				<div class="control">
+      					<button class="button is-info" @click="addTask">
+      						<span class="icon">
+      							<i class="fas fa-plus"></i>
+      						</span>
+      					</button>
+      				</div>
+      			</div>
+      			<p class="has-text-centered">
+      				<code>Ctlr + click</code> to edit a task.
+      			</p>
+      		</div>
+      		<div class="section pt-4">
+	      		<div class="notification mb-2" v-for="(todo, key) in tasks" :class="todo.state?'is-success': ''" @dblclick="toggleTask(key)" @click.ctrl="taskEdit(key)" :contenteditable="false">
+	      			<button class="delete" @click="removeTask(key)"></button>{{todo.name}}</div>
+      			</div>
+      		<footer class="footer has-text-centered">
+      			<p>Lorem, ipsum dolor sit amet consectetur, adipisicing elit. Molestiae, sit.</p>
+      		</footer>
+      	</div>
+      </div>
+    </div>
+  </section>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <!-- <script src="./node_modules/vue/dist/vue.min.js"></script> -->
+  <script src="app.js"></script>
+  </body>
+</html>
