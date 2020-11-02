@@ -3,6 +3,7 @@ var app = new Vue({
 	data: {
 		message: "Task manager",
 		task: '',
+		isEditable: 'false',
 		tasks: [
 			{name: "ToDO", state: false},
 			{name: "TaDA", state: false},
@@ -22,6 +23,7 @@ var app = new Vue({
 		},
 		taskEdit(key){
 			console.log('Editing task ' + key);
+			// this.isEditable = true; 
 		},
 		removeTask(key){
 			this.tasks.splice(key, 1);
