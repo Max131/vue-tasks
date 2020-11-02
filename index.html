@@ -48,9 +48,13 @@
       			</p>
       		</div>
       		<div class="section pt-4">
-	      		<div class="notification mb-2" v-for="(todo, key) in tasks" :class="todo.state?'is-success': ''" @dblclick="toggleTask(key)" @click.ctrl="taskEdit(key)" :contenteditable="isEditable">
-	      			<button class="delete" @click="removeTask(key)"></button>{{todo.name}}</div>
-      			</div>
+	      		<div class="notification mb-2" v-for="(todo, key) in tasks" :class="todo.state?'is-success': ''" @dblclick="toggleTask(key)" @click.ctrl="taskEdit(key)">
+	      			<button class="delete" @click="removeTask(key)"></button>
+              <p :contenteditable="todo.editable" @keyup.enter="">
+                {{todo.name}}
+              </p>
+            </div>
+    			</div>
       		<footer class="footer has-text-centered">
       			<p>Lorem, ipsum dolor sit amet consectetur, adipisicing elit. Molestiae, sit.</p>
       		</footer>
@@ -58,8 +62,8 @@
       </div>
     </div>
   </section>
-  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-  <!-- <script src="./node_modules/vue/dist/vue.min.js"></script> -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+  <script src="./node_modules/vue/dist/vue.min.js"></script>
   <script src="app.js"></script>
   </body>
 </html>

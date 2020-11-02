@@ -3,12 +3,11 @@ var app = new Vue({
 	data: {
 		message: "Task manager",
 		task: '',
-		isEditable: 'false',
 		tasks: [
-			{name: "ToDO", state: false},
-			{name: "TaDA", state: false},
-			{name: "TeDE", state: true},
-			{name: "TuDU", state: false}
+			{name: "ToDO", editable: false, state: false},
+			{name: "TaDA", editable: false, state: false},
+			{name: "TeDE", editable: false, state: true},
+			{name: "TuDU", editable: false, state: false}
 		]
 	},
 	methods: {
@@ -22,8 +21,13 @@ var app = new Vue({
 			}
 		},
 		taskEdit(key){
-			console.log('Editing task ' + key);
-			// this.isEditable = true; 
+			// console.log('Editing task ' + key);
+			// this.isEditable = true;
+			this.tasks[key].editable=true;
+		},
+		endEditTask(key){
+			this.tasks[key].name.trim();
+			this.tasks[key].editable=false;
 		},
 		removeTask(key){
 			this.tasks.splice(key, 1);
