@@ -4,10 +4,10 @@ var app = new Vue({
 		message: "Task manager",
 		task: '',
 		tasks: [
-			{name: "ToDO", editable: false, state: false},
-			{name: "TaDA", editable: false, state: false},
-			{name: "TeDE", editable: false, state: true},
-			{name: "TuDU", editable: false, state: false}
+			{name: "ToDO", editable: "false", state: false},
+			{name: "TaDA", editable: "false", state: false},
+			{name: "TeDE", editable: "false", state: true},
+			{name: "TuDU", editable: "false", state: false}
 		]
 	},
 	methods: {
@@ -27,7 +27,7 @@ var app = new Vue({
 		},
 		endEditTask(key){
 			this.tasks[key].name.trim();
-			this.tasks[key].editable=false;
+			this.tasks[key].editable = "false";
 		},
 		removeTask(key){
 			this.tasks.splice(key, 1);
