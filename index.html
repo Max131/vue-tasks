@@ -48,7 +48,7 @@
       			</p>
       		</div>
       		<div class="section pt-4">
-	      		<div class="notification mb-2" v-for="(todo, key) in tasks" :class="todo.state?'is-success': ''" @dblclick="toggleTask(key)" @click.ctrl="taskEdit(key)">
+	      		<div class="notification mb-2" v-for="(todo, key) in tasks" :class="todo.state?'is-success': ''" @dblclick="toggleTask(key)" @click.ctrl="taskEdit(key)" ref="msg">
 	      			<button class="delete" @click="removeTask(key)"></button>
               <p :contenteditable="todo.editable" @keydown.enter="endEditTask(key)" ref="msg">
                 {{todo.name}}
