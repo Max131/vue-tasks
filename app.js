@@ -28,6 +28,7 @@ var app = new Vue({
 		endEditTask(key){
 			this.tasks[key].name.trim();
 			this.tasks[key].editable = "false";
+			// this.$refs.msg[]
 		},
 		removeTask(key){
 			this.tasks.splice(key, 1);

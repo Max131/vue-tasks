@@ -4,7 +4,7 @@
   "description": "Vue test",
   "main": "index.html",
   "scripts": {
-    "start": "live-server ."
+    "start": "live-server . --port=5500 --quiet"
   },
   "author": "",
   "license": "ISC",
